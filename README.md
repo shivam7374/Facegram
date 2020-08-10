@@ -6,6 +6,7 @@ redux
 react-redux
 redux-thunk
 redux-logger
+prop-types
 
 ## Available Scripts
 
