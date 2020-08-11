@@ -6,7 +6,7 @@ export default class Home extends Component {
     const posts = this.props.posts;
     console.log("this props ", this.props);
     return (
-      <div>
+      <div className="home">
         <PostList posts={posts}></PostList>
       </div>
     );
