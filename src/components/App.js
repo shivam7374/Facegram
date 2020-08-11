@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import { fetchPosts } from "../actions/posts";
-import { PostList, Navbar } from "./index";
+import { Home, Navbar } from "./index";
 
 const Login = () => {
   return <div>Login</div>;
@@ -11,9 +11,11 @@ const Login = () => {
 const Signup = () => {
   return <div>Signup</div>;
 };
-const Home = () => {
-  return <div>Home</div>;
-};
+// const Home = (props) => {
+//   // some props are send by defalut when we use route
+//   console.log(props);
+//   return <div>Home</div>;
+// };
 
 class App extends React.Component {
   componentDidMount() {
@@ -28,7 +30,8 @@ class App extends React.Component {
         <div>
           <Navbar></Navbar>
           {/* <PostList posts={posts}></PostList> */}
-          <ul>
+
+          {/* <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -38,8 +41,15 @@ class App extends React.Component {
             <li>
               <Link to="/signup">Signup</Link>
             </li>
-          </ul>
-          <Route exact path="/" component={Home}></Route>
+          </ul> */}
+
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return <Home posts={posts}></Home>;
+            }}
+          ></Route>
           <Route path="/login" component={Login}></Route>
           <Route path="/signup" component={Signup}></Route>
         </div>
