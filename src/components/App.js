@@ -28,7 +28,7 @@ class App extends React.Component {
         <div>
           <Navbar></Navbar>
           {/* <PostList posts={posts}></PostList> */}
-          <Route path="/" component={Home}></Route>
+          <Route exact path="/" component={Home}></Route>
           <Route path="/login" component={Login}></Route>
           <Route path="/signup" component={Signup}></Route>
         </div>
