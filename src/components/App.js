@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import { fetchPosts } from "../actions/posts";
 import { Home, Navbar, Page404 } from "./index";
@@ -42,18 +42,19 @@ class App extends React.Component {
               <Link to="/signup">Signup</Link>
             </li>
           </ul> */}
-
-          <Route
-            exact
-            path="/"
-            render={(props) => {
-              return <Home {...props} posts={posts}></Home>;
-            }}
-          ></Route>
-          <Route path="/login" component={Login}></Route>
-          <Route path="/signup" component={Signup}></Route>
-          <Route component={Page404}></Route>
-          {/* for any random url default page 404 */}
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={(props) => {
+                return <Home {...props} posts={posts}></Home>;
+              }}
+            ></Route>
+            <Route path="/login" component={Login}></Route>
+            <Route path="/signup" component={Signup}></Route>
+            <Route component={Page404}></Route>
+            {/* for any random url default page 404 */}
+          </Switch>
         </div>
       </Router>
     );
