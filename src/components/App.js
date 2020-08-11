@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import { fetchPosts } from "../actions/posts";
 import { PostList } from "./index";

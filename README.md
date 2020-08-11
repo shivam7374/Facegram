@@ -7,6 +7,7 @@ react-redux
 redux-thunk
 redux-logger
 prop-types
+react-router-dom
 
 ## Available Scripts
 
